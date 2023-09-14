@@ -1,3 +1,4 @@
+import 'package:clothes_app/users/authentication/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -54,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: const EdgeInsets.fromLTRB(30, 30, 30, 8),
                           child: Column(
                             children: [
+                              // email-password-login btn
                               Form(
                                   key: _formKey,
                                   child: Column(
@@ -172,7 +174,44 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       )
                                     ],
-                                  ))
+                                  )),
+                              const SizedBox(
+                                height: 16,
+                              ),
+                              //dont have an account button - button
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Don't have an Account"),
+                                  TextButton(
+                                      onPressed: () {
+                                        Get.to(SignUpScreen());
+                                      },
+                                      child: Text(
+                                        "Sign Up here",
+                                        style: TextStyle(
+                                            color: Colors.purpleAccent),
+                                      ))
+                                ],
+                              ),
+                              const Text(
+                                "or",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              // are you admin - button
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("Are you an Admin ?"),
+                                  TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Click here",
+                                        style: TextStyle(
+                                            color: Colors.purpleAccent),
+                                      ))
+                                ],
+                              ),
                             ],
                           ),
                         ),
